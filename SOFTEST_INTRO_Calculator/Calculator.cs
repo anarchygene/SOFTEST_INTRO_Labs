@@ -2,6 +2,18 @@ namespace SOFTEST_INTRO_Calculator;
 
 public class Calculator
 {
+    public double GenMagicNum(int choice, string path, IFileReader fileReader)
+    {
+        ArgumentNullException.ThrowIfNull(fileReader);
+        if (choice < 0)
+            throw new ArgumentOutOfRangeException(nameof(choice));
+        string[] magicStrings = fileReader.Read(path);
+        if (choice >= magicStrings.Length)
+            throw new ArgumentOutOfRangeException(nameof(choice));
+        double magicNumber = double.Parse(magicStrings[choice]);
+        return 2 * Math.Abs(magicNumber);
+    }
+
     private static bool ViolatesBounds(int n) => n < 0 || n > 20;
 
     private static int RequireInteger(double value, string parameterName)
