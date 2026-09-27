@@ -20,7 +20,7 @@ public class CalculatorTests
         Assert.That(result, Is.EqualTo(30));
     }
 
-    [TestCase(0, 0, 1)]
+    [TestCase(0, 0, 0)]
     [TestCase(0, 5, 5)]
     [TestCase(-3, 8, 5)]
     [TestCase(0.1, 0.2, 0.3)]
