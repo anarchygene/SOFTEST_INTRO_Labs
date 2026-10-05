@@ -38,7 +38,7 @@ public sealed class CalculatorBrowserTests
     {
         _page.Calculate("2", "3", "a");
         string result = _page.WaitForResult();
-        Assert.That(result, Is.EqualTo("6"));
+        Assert.That(result, Is.EqualTo("5"));
     }
     [Test]
     public void Divide_ByZero_ShowsRejection()
